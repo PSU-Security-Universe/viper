@@ -53,3 +53,8 @@ VIPER: Spotting Syscall-Guard Variables for Data-Only Attacks
   address      = {Anaheim, CA},
 }
 ```
+
+## Support
+
+We thank National Science Foundation (NSF) for supporting our work.
+This research is supported by NSF under grant CNS-2247652.
