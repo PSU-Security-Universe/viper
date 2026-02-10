@@ -660,7 +660,7 @@ Value *findMatchedStore(u32 load_index, u32 &index_cur, u32 &store_dist) {
                 BB_array[index_cur].rw_vector[store_index - 2] & BITS_MASK;
 
             if ((store_dst_id <= load_op_id &&
-                load_op_id <= (store_dst_id + 8* (store_size - 1))) && 
+                load_op_id <= (store_dst_id + store_size)) && 
                 valid_match_flag) {
 
               memcpyOffset = load_op_id - store_dst_id;
@@ -683,7 +683,7 @@ Value *findMatchedStore(u32 load_index, u32 &index_cur, u32 &store_dist) {
             store_dst_id =
                 BB_array[index_cur].rw_vector[store_index - 1] & BITS_MASK;
             if ((store_dst_id <= load_op_id) &&
-                (load_op_id <= (store_dst_id + 8 * (store_size - 1))) &&
+                (load_op_id <= (store_dst_id + store_size)) &&
                 valid_match_flag) {
               return dyn_cast<Value>(CI);
             } else {
